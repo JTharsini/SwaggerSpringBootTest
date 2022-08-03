@@ -1,0 +1,43 @@
+Swagger tools to:
+-Develop APIs
+-Interact with APIs
+-Document APIs - Swagger UI
+API developer, API consumer: separate. Questioning
+-Need to update documentation with API change
+-Before REST there was SOAP - It has WSDL for documentation
+-REST - no formal documentation in spec
+-Swagger generates API documentation based on the metadata
+-From Swagger metadata API documentation can be generated
+-When API is getting updated, need to update metadata only & need to generate documentation again ==> no outdated documentation
+-Adding Swagger to Spring boot:
+	1. Getting the Swagger 2 Spring dependency : Swagger is the specification for the documentation. There are different implementation for it.
+	   For spring boot application, we can use spring implementation for swagger:
+			Dependency for Json documentation:
+				<dependency>
+					<groupId>io.springfox</groupId>
+					<artifactId>springfox-swagger2</artifactId>
+					<version>3.0.0</version>
+				</dependency>
+			Dependency for HTML documentation
+				<dependency>
+					<groupId>io.springfox</groupId>
+					<artifactId>springfox-swagger-ui</artifactId>
+					<version>3.0.0</version>
+				</dependency>
+			Following dependency bundles above 2
+				<dependency>
+					<groupId>io.springfox</groupId>
+					<artifactId>springfox-boot-starter</artifactId>
+					<version>3.0.0</version>
+				</dependency>
+	2. Enabling Swagger in your code: @EnableSwagger2
+	Add spring.mvc.pathmatch.matching-strategy=ant_path_matcher to application properties
+	3. Configuring Swagger
+	4. Adding details as annotations to APIs
+-When first two steps are done with Json documentation dependency added, http://localhost:8080/v2/api-docs get api will show generated documentation
+-HTML documentation will be generated to root directory ==> APIs should not use root URL : http://localhost:8080/swagger-ui/ will give that
+-Basic error controller : by SpringMVC
+-Schema : models used in REST API
+-Generated swagger-ui page is general ==> Need to change
+-Removes basic error controller & heading and description should be modified
+Use Docket. It is an object to configure swagger parameters:
