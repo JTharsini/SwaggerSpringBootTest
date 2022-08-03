@@ -45,3 +45,6 @@ Docket(DocumentationType.SWAGGER_2).select() gives builder of it
 -@ApiOperation annotation: to specify description for api
 -@ApiParam annotation: to specify description for values
 -@ApiModel and @ApiModelProperty annotations:
+-In case of Swagger, more annotation when customization than code:
+Alternative: Spring REST Docs
+-
