@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
 import com.jeya.swaggerSpringBootTest.models.Contact;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,6 +20,9 @@ public class AddressBookResource
   ConcurrentHashMap<String, Contact> contacts = new ConcurrentHashMap<>();
 
   @GetMapping("/{id}")
+  @ApiOperation(value = "Find Contacts by id",
+    notes = "Provide an id to look up specific contact from the address book",
+    response = Contact.class)
   public Contact getContact(@PathVariable String id)
   {
     return contacts.get(id);

@@ -42,3 +42,4 @@ API developer, API consumer: separate. Questioning
 -Removes basic error controller & heading and description should be modified
 Use Docket. It is an object to configure swagger parameters:
 Docket(DocumentationType.SWAGGER_2).select() gives builder of it
+-@ApiOperation annotation: to specify description for api

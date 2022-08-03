@@ -25,11 +25,8 @@ public class SwaggerSpringBootTestApplication
   @Bean
   Docket swaggerConfiguration()
   {
-    Docket docket = new Docket(DocumentationType.SWAGGER_2).select().paths(PathSelectors.ant("/api/*"))
-      .apis(RequestHandlerSelectors.basePackage("com.jeya")).build();
-    ApiInfo apiInfo = getApiInfo();
-    docket.apiInfo(apiInfo);
-    return docket;
+    return new Docket(DocumentationType.SWAGGER_2).select().paths(PathSelectors.ant("/api/*"))
+      .apis(RequestHandlerSelectors.basePackage("com.jeya")).build().apiInfo(getApiInfo());
   }
 
   private ApiInfo getApiInfo()
