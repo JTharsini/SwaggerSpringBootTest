@@ -41,3 +41,4 @@ API developer, API consumer: separate. Questioning
 -Generated swagger-ui page is general ==> Need to change
 -Removes basic error controller & heading and description should be modified
 Use Docket. It is an object to configure swagger parameters:
+Docket(DocumentationType.SWAGGER_2).select() gives builder of it
